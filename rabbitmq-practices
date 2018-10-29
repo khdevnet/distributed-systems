@@ -8,7 +8,7 @@ docker run -d --hostname sw-rabbit-host --name sw-rabbit -p 8080:15672 -p 5672:5
 
 
 
-Terms
+### Terms
 A producer is a user application that sends messages.
 A queue is a buffer that stores messages.
 A consumer is a user application that receives messages.
