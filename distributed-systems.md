@@ -60,7 +60,10 @@ This fallacy was added to the original seven by Gosling, the creator of Java, in
 
 ### Message bus
 #### Durability Guarantees
-1. Message is persisted
-2. Message is not removed until processed
-3. Duplicate messages are recognized
-4. Save subscriptions, avoid duplicated subscriptions
+* Message is persisted
+* Message is not removed until processed
+* Duplicate messages are recognized
+* Save subscriptions, avoid duplicated subscriptions
+
+### Health checks
+* all services of the application must have Health check functionality (this can be use to be sure that related microservices are alive and operation will be success, if one of the depended service is down then work of the current service invalid) 
