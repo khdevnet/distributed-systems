@@ -2,11 +2,11 @@
 ***producer*** is a user application that sends messages.      
 ***queue*** is a buffer that stores messages.      
 ***consumer*** is a user application that receives messages.      
-***Message*** broker: it accepts and forwards messages.     
+***Message broker*** it accepts and forwards messages.     
 ***Exchange*** the producer can only send messages to an exchange. An exchange is a very simple thing. On one side it receives messages from producers and the other side it pushes them to queues. (direct, topic, headers and fanout)
 
 
-### Best practice:
+### Best practice
 1. Manual message acknowledgments are turned on by default. 
 Set autoAck ("automatic acknowledgement mode") parameter to false you will new manually aprove if message processed successfully. 
 ```
