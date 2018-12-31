@@ -67,3 +67,6 @@ This fallacy was added to the original seven by Gosling, the creator of Java, in
 
 ### Health checks
 * all services of the application must have Health check functionality (this can be use to be sure that related microservices are alive and operation will be success, if one of the depended service is down then work of the current service invalid) 
+
+### Resources
+* [cap-theorem-and-distributed](https://towardsdatascience.com/cap-theorem-and-distributed-database-management-systems-5c2be977950e)
