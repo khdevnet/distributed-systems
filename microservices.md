@@ -26,3 +26,11 @@ S: Choose one environment and deploy strategy, use it for all microservices for 
 S: Automate everything as possible.
 * Don't have single storage for all microservices configurations.
 S: Store all configs in one place, make it possible to change concreate microservice configuration from one place.
+* Don't have good documentation 
+
+## Single microservice best practice
+* Use Automation API schemas builders for example Swagger.
+* One microservice one database or independent database scheme.
+* Use versioning for APIs, Messages, libraries.
+* Write integration, Unit Tests.
+* Use health checks for dependent services.
