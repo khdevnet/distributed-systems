@@ -35,16 +35,17 @@ This fallacy was added to the original seven by Gosling, the creator of Java, in
 ### Separate configurations
 #### Topological configurations      
 * Should be related to topology configuration and make possible to change configuration of each element in it. Store all settings in one place
-* separate config file
-* shared database
+* Separate config file
+* Shared database for configurations
+* Create service which will collect information about microservice (what version of messages it use, what APIs, what database connection),
 
 #### Internal configuration      
 * Should be related only to internal application configurations*
 * Web.config file
 
 ### Deployment
-* Save all configurations in one place (database)
-* Save Service, Handlers, Messages  versions and names in one place
+* Save all configurations in one place foe example database.
+* Keep records of version of component, machine, configs what use deployed component.
 * Remotely scriptable
 
 ### Operational Concerns
