@@ -89,8 +89,25 @@ The Saga pattern is another widely used pattern for distributed transactions. It
 * **Disadvantages of the Saga pattern** The Saga pattern is difficult to debug, especially when many microservices are involved. Also, the event messages could become difficult to maintain if the system gets complex. Another disadvantage of the Saga pattern is it does not have read isolation. For example, the customer could see the order being created, but in the next second, the order is removed due to a compensation transaction.
 
 ### There are two ways of coordination sagas:
-* **Choreography** - each local transaction publishes domain events that trigger local transactions in other services
-* **Orchestration** - an orchestrator (object) tells the participants what local transactions to execute
+#### Choreography
+**Choreography** - each local transaction publishes domain events that trigger local transactions in other services
+![](https://github.com/khdevnet/distributed-systems/blob/master/docs/Saga_Choreography_Flow.001.jpeg)
+An e-commerce application that uses this approach would create an order using a choreography-based saga that consists of the following steps:
+
+* The Order Service creates an Order in a pending state and publishes an OrderCreated event
+* The Customer Service receives the event attempts to reserve credit for that Order. It publishes either a Credit Reserved event or a CreditLimitExceeded event.
+* The Order Service receives the event and changes the state of the order to either approved or cancelled
+
+#### Orchestration
+**Orchestration** - an orchestrator (object) tells the participants what local transactions to execute
+![](https://github.com/khdevnet/distributed-systems/blob/master/docs/Saga_Orchestration_Flow.001.jpeg)
+An e-commerce application that uses this approach would create an order using an orchestration-based saga that consists of the following steps:
+
+* The Order Service creates an Order in a pending state and creates a CreateOrderSaga
+* The CreateOrderSaga sends a ReserveCredit command to the Customer Service
+* The Customer Service attempts to reserve credit for that Order and sends back a reply
+* The CreateOrderSaga receives the reply and sends either an ApproveOrder or RejectOrder command to the Order Service
+* The Order Service changes the state of the order to either approved or cancelled
 
 # Microservices
 Is an architectural style that structures an application as a collection of services.
