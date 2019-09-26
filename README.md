@@ -1,4 +1,6 @@
 # Distributed-systems
+* [Patterns for distributed transactions](#patterns-for-distributed-transactions)
+* [Microservices](#microservices)
 ### CAP Theorem
 
 1. Consistency: Every read receives the most recent write or an error
@@ -67,6 +69,24 @@ This fallacy was added to the original seven by Gosling, the creator of Java, in
 ### Health checks
 * all services of the application must have Health check functionality (this can be use to be sure that related microservices are alive and operation will be success, if one of the depended service is down then work of the current service invalid) 
 
+# Patterns for distributed transactions
+When a microservice architecture decomposes a monolithic system into self-encapsulated services, it can break transactions. This means a local transaction in the monolithic system is now **distributed** into multiple services that will be called in a sequence.
+
+## Two-phase commit (2pc) pattern
+As its name hints, 2pc has two phases: A prepare phase and a commit phase. In the prepare phase, all microservices will be asked to prepare for some data change that could be done atomically. Once all microservices are prepared(validate if connection exist, if data valid, lock data), the commit phase will ask all the microservices to make the actual changes.
+Normally, there needs to be a global coordinator to maintain the lifecycle of the transaction, and the coordinator will need to call the microservices in the prepare and commit phases.
+
+* **Benefits of using 2pc** 2pc is a very strong consistency protocol. First, the prepare and commit phases guarantee that the transaction is atomic. The transaction will end with either all microservices returning successfully or all microservices have nothing changed.  Secondly, 2pc allows read-write isolation. This means the changes on a field are not visible until the coordinator commits the changes. 
+
+* **Disadvantages of using 2pc**
+While 2pc has solved the problem, it is not really recommended for many microservice-based systems because 2pc is synchronous (blocking). The protocol will need to lock the object that will be changed before the transaction completes. The lock could become a system performance bottleneck. Also, it is possible to have two transactions mutually lock each other (deadlock) when each transaction requests a lock on a resource the other requires. 
+
+## Saga pattern
+The Saga pattern is another widely used pattern for distributed transactions. It is different from 2pc, which is synchronous. The Saga pattern is asynchronous and reactive. In a Saga pattern, the distributed transaction is fulfilled by asynchronous local transactions on all related microservices. The microservices communicate with each other through an event bus.
+
+* **Advantages of the Saga pattern** One big advantage of the Saga pattern is its support for long-lived transactions. Because each microservice focuses only on its own local atomic transaction, other microservices are not blocked if a microservice is running for a long time. This also allows transactions to continue waiting for user input. Also, because all local transactions are happening in parallel, there is no lock on any object.
+
+* **Disadvantages of the Saga pattern** The Saga pattern is difficult to debug, especially when many microservices are involved. Also, the event messages could become difficult to maintain if the system gets complex. Another disadvantage of the Saga pattern is it does not have read isolation. For example, the customer could see the order being created, but in the next second, the order is removed due to a compensation transaction.
 
 # Microservices
 Is an architectural style that structures an application as a collection of services.
@@ -107,7 +127,7 @@ S: Store all configs in one place, make it possible to change concreate microser
 
 
 ### Resources
+* [patterns-for-distributed-transactions-within-a-microservices-architecture](https://developers.redhat.com/blog/2018/10/01/patterns-for-distributed-transactions-within-a-microservices-architecture/)
 * [cap-theorem-and-distributed](https://towardsdatascience.com/cap-theorem-and-distributed-database-management-systems-5c2be977950e)
-
 * [RabbitMQ](https://github.com/khdevnet/distributed-systems/blob/master/rabbitmq-practices.md) 
 * Message bus
