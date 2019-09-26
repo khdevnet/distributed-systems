@@ -88,6 +88,10 @@ The Saga pattern is another widely used pattern for distributed transactions. It
 
 * **Disadvantages of the Saga pattern** The Saga pattern is difficult to debug, especially when many microservices are involved. Also, the event messages could become difficult to maintain if the system gets complex. Another disadvantage of the Saga pattern is it does not have read isolation. For example, the customer could see the order being created, but in the next second, the order is removed due to a compensation transaction.
 
+### There are two ways of coordination sagas:
+* **Choreography** - each local transaction publishes domain events that trigger local transactions in other services
+* **Orchestration** - an orchestrator (object) tells the participants what local transactions to execute
+
 # Microservices
 Is an architectural style that structures an application as a collection of services.
 
@@ -128,6 +132,7 @@ S: Store all configs in one place, make it possible to change concreate microser
 
 ### Resources
 * [patterns-for-distributed-transactions-within-a-microservices-architecture](https://developers.redhat.com/blog/2018/10/01/patterns-for-distributed-transactions-within-a-microservices-architecture/)
+* [saga pattern](https://microservices.io/patterns/data/saga.html)
 * [cap-theorem-and-distributed](https://towardsdatascience.com/cap-theorem-and-distributed-database-management-systems-5c2be977950e)
 * [RabbitMQ](https://github.com/khdevnet/distributed-systems/blob/master/rabbitmq-practices.md) 
 * Message bus
