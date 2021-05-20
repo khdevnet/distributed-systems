@@ -139,15 +139,15 @@ S: Automate everything as possible.
 S: Store all configs in one place, make it possible to change concreate microservice configuration from one place.
 * Don't have good documentation 
 
+## Managing data in microservices
+* [Managing data in microservices techniques](https://github.com/khdevnet/distributed-systems/blob/master/docs/ManagingDatainMicroservices.pdf)
+
 ## Single microservice best practice
 * Use Automation API schemas builders for example Swagger.
 * One microservice one database or independent database scheme.
 * Use versioning for APIs, Messages, libraries.
 * Write integration, Unit Tests.
 * Use health checks for dependent services.
-
-## Managing data in microservices
-
 
 
 ### Resources
