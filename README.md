@@ -146,10 +146,13 @@ S: Store all configs in one place, make it possible to change concreate microser
 * Write integration, Unit Tests.
 * Use health checks for dependent services.
 
+## Managing data in microservices
+
+
 
 ### Resources
 * [patterns-for-distributed-transactions-within-a-microservices-architecture](https://developers.redhat.com/blog/2018/10/01/patterns-for-distributed-transactions-within-a-microservices-architecture/)
 * [saga pattern](https://microservices.io/patterns/data/saga.html)
 * [cap-theorem-and-distributed](https://towardsdatascience.com/cap-theorem-and-distributed-database-management-systems-5c2be977950e)
 * [RabbitMQ](https://github.com/khdevnet/distributed-systems/blob/master/rabbitmq-practices.md) 
-* Message bus
+* [Managing data in microservices](https://www.youtube.com/watch?v=E8-e-3fRHBw&t=2353s)
