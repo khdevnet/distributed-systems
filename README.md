@@ -164,9 +164,9 @@ In case the system faces any failure, it should stay responsive. Resilience is a
 Reactive systems can react to changes and stay responsive under varying workload. They achieve elasticity in a cost effective way on commodity hardware and software platforms.
 (sharding, replication, workload distribution)
 
-
 ### Reactive systems must be message driven
 Message driven: In order to establish the resilient principle, reactive systems need to establish a boundary between components by relying on asynchronous message passing.
+(Accepted status is asynchronus by default, callback mechanism to avoid waiting)
 
 ### Resources
 * [patterns-for-distributed-transactions-within-a-microservices-architecture](https://developers.redhat.com/blog/2018/10/01/patterns-for-distributed-transactions-within-a-microservices-architecture/)
