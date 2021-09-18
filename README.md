@@ -150,6 +150,23 @@ S: Store all configs in one place, make it possible to change concreate microser
 * Use health checks for dependent services.
 
 
+# Reactive microservices
+## Reactive manifest
+### Reactive systems must be responsive
+The system should respond in a timely manner. Responsive systems focus on providing rapid and consistent response times, so they deliver a consistent quality of service.
+
+### Reactive systems must be resilient
+In case the system faces any failure, it should stay responsive. Resilience is achieved by replication, containment, isolation, and delegation. Failures are contained within each component, isolating components from each other, so when failure has occurred in a component, it will not affect the other components or the system as a whole.
+(Circuit bracker, Bulkahead)
+
+### Reactive systems must be elastic
+Reactive systems can react to changes and stay responsive under varying workload. They achieve elasticity in a cost effective way on commodity hardware and software platforms.
+(sharding, replication, workload distribution)
+
+
+### Reactive systems must be message driven
+Message driven: In order to establish the resilient principle, reactive systems need to establish a boundary between components by relying on asynchronous message passing.
+
 ### Resources
 * [patterns-for-distributed-transactions-within-a-microservices-architecture](https://developers.redhat.com/blog/2018/10/01/patterns-for-distributed-transactions-within-a-microservices-architecture/)
 * [saga pattern](https://microservices.io/patterns/data/saga.html)
