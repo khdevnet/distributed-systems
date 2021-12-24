@@ -140,6 +140,21 @@ S: Automate everything as possible.
 S: Store all configs in one place, make it possible to change concreate microservice configuration from one place.
 * Don't have good documentation 
 
+## Configurations
+Types of configuration
+### Topological
+* Connection strings
+* Endpoint URLs
+* Queue names
+### Internal
+* Bindings
+* Contracts
+* Authentication
+* Namespaces
+* Handlers
+* Modules
+* Assembly bindings
+
 ## Managing data in microservices
 * [Managing data in microservices techniques](https://github.com/khdevnet/distributed-systems/blob/master/docs/ManagingDatainMicroservices.pdf)
 
