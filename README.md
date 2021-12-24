@@ -144,6 +144,9 @@ Types of configuration
 * Databases scheme
 * Services/API
 * Messages
+* Deployment
+![](https://github.com/khdevnet/distributed-systems/blob/master/docs/deployment-versioning.png | width=200)
+
 
 ### Message bus
 #### Durability Guarantees
