@@ -33,43 +33,6 @@ While nothing in life is free, the costs of setting and running a WAN network ar
 8. **The network is homogenous**    
 This fallacy was added to the original seven by Gosling, the creator of Java, in 1997. With the advent of mobile, no network today is homogenous, but an increasing number of tools are being built that do let you try out things across different networks and environments. The key point here is to ensure you have no vendor lock-in.
 
-### Separate configurations
-#### Topological configurations      
-* Should be related to topology configuration and make possible to change configuration of each element in it. Store all settings in one place
-* Separate config file
-* Shared database for configurations
-* Create service which will collect information about microservice (what version of messages it use, what APIs, what database connection),
-
-#### Internal configuration      
-* Should be related only to internal application configurations*
-* Web.config file
-
-### Deployment
-* Save all configurations in one place foe example database.
-* Keep records of version of component, machine, configs what use deployed component.
-* Remotely scriptable
-
-### Operational Concerns
-#### Configuration
-* Separate topological from internal settings 
-* Separate config file
-* Shared configuration database
-
-#### Versioning
-* Databases scheme
-* Services/API
-* Messages
-
-### Message bus
-#### Durability Guarantees
-* Message is persisted
-* Message is not removed until processed
-* Duplicate messages are recognized
-* Save subscriptions, avoid duplicated subscriptions
-
-### Health checks
-* all services of the application must have Health check functionality (this can be use to be sure that related microservices are alive and operation will be success, if one of the depended service is down then work of the current service invalid) 
-
 # Patterns for distributed transactions
 When a microservice architecture decomposes a monolithic system into self-encapsulated services, it can break transactions. This means a local transaction in the monolithic system is now **distributed** into multiple services that will be called in a sequence.
 
@@ -140,7 +103,8 @@ S: Automate everything as possible.
 S: Store all configs in one place, make it possible to change concreate microservice configuration from one place.
 * Don't have good documentation 
 
-## Configurations
+## Operational Concerns
+### Separate configurations
 Types of configuration
 ### Topological
 * Connection strings
@@ -154,6 +118,44 @@ Types of configuration
 * Handlers
 * Modules
 * Assembly bindings
+* 
+#### Topological configurations      
+* Should be related to topology configuration and make possible to change configuration of each element in it. Store all settings in one place
+* Separate config file
+* Shared database for configurations
+* Create service which will collect information about microservice (what version of messages it use, what APIs, what database connection),
+
+#### Internal configuration      
+* Should be related only to internal application configurations*
+* Web.config file
+
+### Deployment
+* Save all configurations in one place foe example database.
+* Keep records of version of component, machine, configs what use deployed component.
+* Remotely scriptable
+
+
+#### Configuration
+* Separate topological from internal settings 
+* Separate config file
+* Shared configuration database
+
+#### Versioning
+* Databases scheme
+* Services/API
+* Messages
+
+### Message bus
+#### Durability Guarantees
+* Message is persisted
+* Message is not removed until processed
+* Duplicate messages are recognized
+* Save subscriptions, avoid duplicated subscriptions
+
+### Health checks
+* all services of the application must have Health check functionality (this can be use to be sure that related microservices are alive and operation will be success, if one of the depended service is down then work of the current service invalid) 
+
+
 
 ## Managing data in microservices
 * [Managing data in microservices techniques](https://github.com/khdevnet/distributed-systems/blob/master/docs/ManagingDatainMicroservices.pdf)
