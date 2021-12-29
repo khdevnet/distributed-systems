@@ -2,6 +2,7 @@
 * [Patterns for distributed transactions](#patterns-for-distributed-transactions)
 * [Microservices](#microservices)
 * [Reactive microservices](#reactive-microservices)
+* [DevOps](https://github.com/khdevnet/distributed-systems/blob/master/devops.md)
 ### CAP Theorem
 
 1. Consistency: Every read receives the most recent write or an error
