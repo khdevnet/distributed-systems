@@ -187,9 +187,17 @@ Reactive systems can react to changes and stay responsive under varying workload
 Message driven: In order to establish the resilient principle, reactive systems need to establish a boundary between components by relying on asynchronous message passing.
 (Accepted status is asynchronus by default, callback mechanism to avoid waiting)
 
+# SOA
+A Service Oriented Architecture is a software architecture pattern, which application components provide services to other components via a communications protocol over a network. The communication can involve either simple data passing or it could involve two or more services coordinating connecting services to each other. Services (such as RESTful Web services) carry out some small functions, such as validating an order, activating account, or providing shopping cart services.
+
+There are 2 main roles in SOA, a service provider and a service consumer. A software agent may play both roles. The Consumer Layer is the point where consumers (human users, other services or third parties) interact with the SOA and Provider Layer consists of all the services defined within the SOA. The following figure shows a quick view of an SOA architecture.
+
+<img src="https://4.bp.blogspot.com/-fT9lXcGTlOA/V0pHgkgAqNI/AAAAAAAAAzM/HuI3h70S16Ip1Mls7ffe60iblq5A1UylwCLcB/s400/Screen%2BShot%2B2016-05-29%2Bat%2B11.33.12%2BAM.png" width="200">
+
 ### Resources
 * [patterns-for-distributed-transactions-within-a-microservices-architecture](https://developers.redhat.com/blog/2018/10/01/patterns-for-distributed-transactions-within-a-microservices-architecture/)
 * [saga pattern](https://microservices.io/patterns/data/saga.html)
 * [cap-theorem-and-distributed](https://towardsdatascience.com/cap-theorem-and-distributed-database-management-systems-5c2be977950e)
 * [RabbitMQ](https://github.com/khdevnet/distributed-systems/blob/master/rabbitmq-practices.md) 
 * [Managing data in microservices](https://www.youtube.com/watch?v=E8-e-3fRHBw&t=2353s)
+* [SOA vs Microservices](https://dzone.com/articles/microservices-vs-soa-2)
