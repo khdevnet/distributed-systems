@@ -37,6 +37,10 @@ Limited functionality
 
 ## Load balancing
 * split processing between several receivers
-* 
+
 ## High availablility
 * in case when one receiver down system will continue to process messages
+
+## Temporal decoupling
+* messages can be send in one time and process later in time
+* receiver can work only couple hours per day and process messages
