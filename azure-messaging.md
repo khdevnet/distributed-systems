@@ -30,4 +30,13 @@ Limited functionality
 ## Connectivity Challenges – Asynchronous Processing
 * process highly variable load and do not disturb web application
 * process messages during not stable connections
+
 ## Load leveling
+* play role of the buffer between sender and receiver
+* process requests when receiving application can process less load then system generate
+
+## Load balancing
+* split processing between several receivers
+* 
+## High availablility
+* in case when one receiver down system will continue to process messages
