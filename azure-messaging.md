@@ -44,3 +44,14 @@ Limited functionality
 ## Temporal decoupling
 * messages can be send in one time and process later in time
 * receiver can work only couple hours per day and process messages
+
+# Service bus broker
+
+* Publish-subscribe: Messages can be broadcast to multiple receivers based on routing rules in the messaging entities.
+* Dead-lettering: Invalid or poison messages can be moved to a dead-letter queue.
+* Message Sessions: Related messages can be grouped together in sessions and processed together.
+* Request-response Correlation: Response messages can be correlated with the appropriate request messages to allow for asynchronous two-way communication.
+* Message Deferral Messages: can be preserved on a messaging entity and retrieved later for processing.
+* Scheduled Enqueue Time Messages: can be sent to a messaging entity and then enqueued at a specified time.
+* Duplicate Detection Duplicate messages: can be ignored by a messaging entity.
+* Message Expiration Messages: can be configured to expire after a specified duration.
