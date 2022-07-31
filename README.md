@@ -188,6 +188,12 @@ Message driven: In order to establish the resilient principle, reactive systems 
 (Accepted status is asynchronus by default, callback mechanism to avoid waiting)
 
 # SOA
+##V1
+SOA typically tries to build business functionality using reusable components that communicate through a decoupled medium like a network or service bus.
+![image](https://user-images.githubusercontent.com/14298158/182033904-5832df20-44db-4c08-96e1-3b8b33024163.png)
+ This service determines in an abstract way what is needed for that business to process the order. The enterprise service bus orchestrates the calls needed to the enterprise services. The enterprise services implement specific behavior defined by the business services. In this case, the service bus would call each enterprise service in the correct order to process the user’s order, and the enterprise services would do the actual work and manage the state. Enterprise services are designed to be reusable for any workflow; the application services, on the other hand, implement functionality that does not need to be reusable, like processing the order specific taxes that would be relevant just for the order workflow, for example. Infrastructure services implement cross-cutting functionality like logging or monitoring.
+
+##V2
 A Service Oriented Architecture is a software architecture pattern, which application components provide services to other components via a communications protocol over a network. The communication can involve either simple data passing or it could involve two or more services coordinating connecting services to each other. Services (such as RESTful Web services) carry out some small functions, such as validating an order, activating account, or providing shopping cart services.
 
 There are 2 main roles in SOA, a service provider and a service consumer. A software agent may play both roles. The Consumer Layer is the point where consumers (human users, other services or third parties) interact with the SOA and Provider Layer consists of all the services defined within the SOA. The following figure shows a quick view of an SOA architecture.
