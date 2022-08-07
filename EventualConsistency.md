@@ -21,6 +21,7 @@ in example "availableSizes" already contains information what producer can use, 
  
 Note:
 - the complexity inside inventory boundary is abstracted from external boundaries (external boundary knows about event but it doesn't know that it sends from read model)
+- changes notified to external boundary only after they heppend inside boundary
 - by practices usually only aggregate in domain can send update event not read model.
 - should be use for specific context.
 - the everall time to update system time will increase
