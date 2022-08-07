@@ -16,9 +16,11 @@ which will contain calculated data for consumer base on producer data.
 in example "availableSizes" already contains information what producer can use, producer doesn't need to make request to consumer to get latest information.
 ## Change order of events, consumer consume an event only after read model was updated
 
-<img src="https://user-images.githubusercontent.com/14298158/183285747-c68b8e28-2a30-49c5-b5a8-c33eeb3993e3.png" width="250">
+<img src="https://user-images.githubusercontent.com/14298158/183286006-d926913d-cb77-41c9-be9e-9babd44a8dc9.png" width="250">
 
+ 
 Note:
+- the complexity inside inventory boundary is abstracted from external boundaries (external boundary knows about event but it doesn't know that it sends from read model)
 - by practices usually only aggregate in domain can send update event not read model.
 - should be use for specific context.
 - the everall time to update system time will increase
