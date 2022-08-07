@@ -26,9 +26,12 @@ in example "availableSizes" already contains information what producer can use, 
 
 ## Handling eventual consistency delays using event versioning 
 - if the version of event were higher then the version of the API, the service would need to retry the request. THis means the service didn't reflect the changes in the event on the read model yet.
-- when a request fetches stale data, it can react to it with a retry (retry shoul be an exception and not a usual situation)
+- when a request fetches stale data, it can react to it with a retry (retry should be an exception and not a usual situation)
 - the implementation should have a circuit breaker and a backoff strategy.
 - retrying is the symptom of the lack of a more sustainable approach; we should use it wisely and sparingly 
+
+## Saving state in microservice to avoid synchronous calls
+- should be use wisely, becuase several copies of data could spread throughout the architecture and wil be hard to maintain 
 
 
 
