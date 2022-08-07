@@ -18,10 +18,17 @@ in example "availableSizes" already contains information what producer can use, 
 
 <img src="https://user-images.githubusercontent.com/14298158/183286006-d926913d-cb77-41c9-be9e-9babd44a8dc9.png" width="250">
 
- 
-Note:
 - the complexity inside inventory boundary is abstracted from external boundaries (external boundary knows about event but it doesn't know that it sends from read model)
 - changes notified to external boundary only after they heppend inside boundary
 - by practices usually only aggregate in domain can send update event not read model.
 - should be use for specific context.
 - the everall time to update system time will increase
+
+## Handling eventual consistency delays using event versioning 
+- if the version of event were higher then the version of the API, the service would need to retry the request. THis means the service didn't reflect the changes in the event on the read model yet.
+- when a request fetches stale data, it can react to it with a retry (retry shoul be an exception and not a usual situation)
+- the implementation should have a circuit breaker and a backoff strategy.
+- retrying is the symptom of the lack of a more sustainable approach; we should use it wisely and sparingly 
+
+
+
