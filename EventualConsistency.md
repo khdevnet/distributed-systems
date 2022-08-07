@@ -13,4 +13,12 @@ which will contain calculated data for consumer base on producer data.
   }
 }
 ```
-in example "availableSizes" already contains information what producer can use, producer doesn't need to make request to consumer to get latest information 
+in example "availableSizes" already contains information what producer can use, producer doesn't need to make request to consumer to get latest information.
+## Change order of events, consumer consume an event only after read model was updated
+
+![image](https://user-images.githubusercontent.com/14298158/183285747-c68b8e28-2a30-49c5-b5a8-c33eeb3993e3.png)
+
+Note:
+- by practices usually only aggregate in domain can send update event not read model.
+- should be use for specific context.
+- the everall time to update system time will increase
