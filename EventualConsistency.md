@@ -41,3 +41,5 @@ in example "availableSizes" already contains information what producer can use, 
 
 
 
+# Resources
+book Practical Event-Driven Microservices Architecture, 5. How to Manage Eventual
