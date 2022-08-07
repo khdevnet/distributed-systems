@@ -33,5 +33,11 @@ in example "availableSizes" already contains information what producer can use, 
 ## Saving state in microservice to avoid synchronous calls
 - should be use wisely, becuase several copies of data could spread throughout the architecture and wil be hard to maintain 
 
+## Bufering state in memory of the service
+- could be use for request intensive applications
+- could read all events from topic at start, and then continue consume events from the topic
+- can be use for small amount of data
+- load data on service start
+
 
 
