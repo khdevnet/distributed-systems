@@ -14,7 +14,7 @@ For example fire and forget, send an email http request.
 Payment system could return transaction id, what could be use to track status of operation
 
 
-#Patterns
+# Patterns
 ## Transform http request to event and send it
 API services received synchronus http request and then transform it to event, this event could be route to proper stream
 ## Transform event to http request
