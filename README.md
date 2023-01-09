@@ -204,6 +204,14 @@ There are 2 main roles in SOA, a service provider and a service consumer. A soft
 
 <img src="https://4.bp.blogspot.com/-fT9lXcGTlOA/V0pHgkgAqNI/AAAAAAAAAzM/HuI3h70S16Ip1Mls7ffe60iblq5A1UylwCLcB/s400/Screen%2BShot%2B2016-05-29%2Bat%2B11.33.12%2BAM.png" width="200">
 
+## System design
+### Vertical vs Horizontal scaling
+#### Failover recovery
+##### Database
+Backup - cold recovery, has long downtime, has data loss
+Replication - data continuously copied to exist database, very fast recovery just switch traffic to new resource
+Write data to several database instances simulteniuosly, when one down redirect traffic to one instance
+
 ### Resources
 * [patterns-for-distributed-transactions-within-a-microservices-architecture](https://developers.redhat.com/blog/2018/10/01/patterns-for-distributed-transactions-within-a-microservices-architecture/)
 * [saga pattern](https://microservices.io/patterns/data/saga.html)
