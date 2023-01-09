@@ -211,7 +211,12 @@ There are 2 main roles in SOA, a service provider and a service consumer. A soft
 Backup - cold recovery, has long downtime, has data loss
 Replication - data continuously copied to exist database, very fast recovery just switch traffic to new resource
 Write data to several database instances simulteniuosly, when one down redirect traffic to one instance
-
+###### Sharding 
+* Range base: when data splits to shards base on range for example year
+* Hash base: when as a key used hash value to generate key and baesd on this key system design where to put data
+* GEO base: split by location, for example contry, city
+* Directory (lookup table): create a lookup table where define relation to what shard save the value
+*      
 ### Resources
 * [patterns-for-distributed-transactions-within-a-microservices-architecture](https://developers.redhat.com/blog/2018/10/01/patterns-for-distributed-transactions-within-a-microservices-architecture/)
 * [saga pattern](https://microservices.io/patterns/data/saga.html)
