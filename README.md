@@ -216,7 +216,28 @@ Write data to several database instances simulteniuosly, when one down redirect 
 * Hash base: when as a key used hash value to generate key and baesd on this key system design where to put data
 * GEO base: split by location, for example contry, city
 * Directory (lookup table): create a lookup table where define relation to what shard save the value
-*      
+
+We've created a template to tackle various system design problems in interviews.
+
+Hope this checklist is useful to guide your discussions during the interview process.
+
+## This briefly touches on the following discussion points:
+- Load Balancing
+- API Gateway
+- Communication Protocols
+- Content Delivery Network (CDN)
+- Database
+- Cache
+- Message Queue
+- Unique ID Generation
+- Scalability
+- Availability
+- Performance
+- Security
+- Fault Tolerance and Resilience
+![1682004881184](https://user-images.githubusercontent.com/14298158/233837937-f337c98f-9593-45a8-b5f6-caf6d0b7f359.jpg)
+
+
 ### Resources
 * [patterns-for-distributed-transactions-within-a-microservices-architecture](https://developers.redhat.com/blog/2018/10/01/patterns-for-distributed-transactions-within-a-microservices-architecture/)
 * [saga pattern](https://microservices.io/patterns/data/saga.html)
